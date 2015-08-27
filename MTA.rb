@@ -3,36 +3,30 @@ lines = {
   'l' => %w[8 6 us 3 1],
   '6' => %w[gc 33 28 23 us ap]
 }
-again = 'undeclared'
-while again != 'n'
-  puts 'What is your starting line? (' + lines.keys.join(', ') +  ')'
-  start_line = gets.chomp.downcase
 
+again = 'undeclared'
+start_line = 'undeclared'
+end_line = 'undeclared'
+start_station = 'undeclared'
+end_station = 'undeclared'
+
+while again != 'n'
   while ! lines.include? start_line
       puts 'What is your starting line? (' + lines.keys.join(', ') +  ')'
       start_line = gets.chomp.downcase
   end
-
-  puts 'Which station on that line? (' + lines[start_line].join(', ') + ')'
-  start_station = gets.chomp.downcase
 
   while ! lines[start_line].include? start_station
     puts 'Which station on that line? (' + lines[start_line].join(', ') + ')'
     start_station = gets.chomp.downcase
   end
 
-  puts 'What is your destination line? (' + lines.keys.join(', ') +  ')'
-  end_line = gets.chomp.downcase
-
   while ! lines.include? end_line
       puts 'What is your destination line? (' + lines.keys.join(', ') +  ')'
       end_line = gets.chomp.downcase
   end
 
-  puts 'Which station on that line? (' + lines[end_line].join(', ') + ')'
-  end_station = gets.chomp.downcase
-
-  while ! lines[start_line].include? start_station
+  while ! lines[end_line].include? end_station
     puts 'Which station on that line? (' + lines[end_line].join(', ') + ')'
     end_station = gets.chomp.downcase
   end
