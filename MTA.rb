@@ -41,8 +41,10 @@ while again != 'n'
     stops = step1.abs() + step2.abs()
     puts 'Your journey is ' + stops.to_s + ' stops.'
   end
+  
   while again != 'y' && again != 'n'
     puts 'Do you want to calculate another journey? (y/n)'
     again = gets.chomp.downcase
   end
+  
 end
