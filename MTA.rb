@@ -40,4 +40,9 @@ if start_line == end_line
   stops = lines[start_line].index(start_station) - lines[end_line].index(end_station)
   stops = stops.abs()
   puts 'Your journey is ' + stops.to_s + ' stops.'
+else
+  step1 = lines[start_line].index(start_station) - lines[start_line].index('us')
+  step2 = lines[end_line].index(end_station) - lines[end_line].index('us')
+  stops = step1.abs() + step2.abs()
+  puts 'Your journey is ' + stops.to_s + ' stops.'
 end
