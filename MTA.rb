@@ -35,3 +35,9 @@ while ! lines[start_line].include? start_station
   puts 'Which station on that line? (' + lines[end_line].join(', ') + ')'
   end_station = gets.chomp.downcase
 end
+
+if start_line == end_line
+  stops = lines[start_line].index(start_station) - lines[end_line].index(end_station)
+  stops = stops.abs()
+  puts 'Your journey is ' + stops.to_s + ' stops.'
+end
